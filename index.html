@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Reset css -->
+        <link rel="stylesheet" href="./src/styles/reset.css">
+
+        <!-- Framework -->
+        <link rel="stylesheet" href="./src/styles/buttons.css">
+        <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+
+        <!-- main style -->
+        <link rel="stylesheet" href="./src/styles/main.css">
+    <title>Jo-ken-po Yu-Gi-Oh Edition</title>
+
+</head>
+
+<body>
+    <!-- Musica de fundo -->
+    <audio id="bgm" loop>
+        <source src="./src/assets/audios/egyptian_duel.mp3"
+        type="audio/mp3"/>
+    </audio>
+
+
+    <!-- Video ao fundo -->
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4"/>
+        </video>
+    </div>
+
+    <!-- Conteúdo principal da página -->
+    <div class="container">
+
+        <!-- Container da esquerda -->
+        <div class="container__left framed-golden-2">
+            <div class="score_box frame">
+                <span id="score_points">Win: 0 | Lose: 0</span>
+            </div>
+
+            <!-- Carta -->
+            <div class="menu_avatar">
+                <img id="card-image">
+            </div>
+
+            <div class="card_details frame">
+                <p id="card-name"></p>
+                <p id="card-type">Selecione uma carta</p>
+            </div>
+        </div>
+
+        <!-- Container da direita -->
+        <div class="container__right">
+            <div class="cardbox__container">
+
+                <!-- Cartas do oponente -->
+                <div class="card-box framed" id="computer-cards"></div>
+
+                <!-- Área de batalha -->
+                <div class="card-versus__container">
+                    <div class="versus-top">
+                        <div class="card-infield">
+                            <img id="player-field-card" height="180px" width="125px">
+                        </div>
+                        
+                        <img src="./src/assets/icons/millenium2.png" height="100px">
+
+                        <div class="card-infield">
+                            <img id="computer-field-card" height="180px" width="125px">
+                        </div>
+                    </div>
+
+                    <div class="versus-bottom">
+                        <button class="rpgui-button" id="next-duel"
+                            onclick= "resetDuel()">GANHOU
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-box framed" id="player-cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+        + ':35729/livereload.js?snipver=1"></'
+        + 'script>')</script>
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>
